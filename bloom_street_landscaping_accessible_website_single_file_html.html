@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Bloom Street Landscaping — Professional landscaping services in San Diego. Lawn care, trimming, and clean-ups for residential and commercial properties." />
+  <title>Bloom Street Landscaping | San Diego</title>
+
+  <!--
+    How to use your logo images:
+    1) Put your logo files in the same folder as this HTML.
+    2) Rename them to: bsl-logo.png and bsl-mark.png (or update the src below).
+  -->
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #0c1b12;
+      --muted: #334a3a;
+      --brand: #165b2a;
+      --brand-2: #2e8b57;
+      --surface: #f3f7f4;
+      --border: #d5e2db;
+      --focus: #0b63ff;
+      --shadow: 0 10px 30px rgba(0,0,0,.08);
+      --radius: 18px;
+      --max: 1100px;
+    }
+
+    /* Prefer user settings (high contrast / reduced motion) */
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.55;
+    }
+
+    a { color: var(--brand); }
+    a:hover { color: var(--brand-2); }
+
+    /* Visible focus for keyboard users */
+    :focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(-120%);
+      background: #000;
+      color: #fff;
+      padding: 10px 14px;
+      z-index: 9999;
+      border-radius: 0 0 12px 0;
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 220px;
+    }
+
+    .brand img {
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+    }
+
+    .brand .name {
+      display: grid;
+      gap: 2px;
+    }
+
+    .brand .name strong {
+      font-size: 1.05rem;
+      letter-spacing: .3px;
+    }
+
+    .brand .name span {
+      font-size: .92rem;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 10px 10px;
+      border-radius: 12px;
+      color: var(--text);
+    }
+    nav a[aria-current="page"],
+    nav a:hover {
+      background: var(--surface);
+      color: var(--brand);
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid var(--border);
+      background: var(--brand);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 650;
+      box-shadow: var(--shadow);
+      white-space: nowrap;
+    }
+    .cta:hover { background: var(--brand-2); color: #fff; }
+
+    main { padding-bottom: 54px; }
+
+    .hero {
+      padding: 46px 0 24px;
+      background: linear-gradient(180deg, var(--surface), #fff);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      line-height: 1.2;
+    }
+
+    .hero p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--brand);
+      padding: 10px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 650;
+    }
+    .secondary:hover { background: var(--surface); }
+
+    .hero-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-weight: 600;
+      margin: 12px 0 0;
+    }
+
+    section { padding: 36px 0; }
+
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .section-title h2 { margin: 0; font-size: 1.55rem; }
+    .section-title p { margin: 0; color: var(--muted); }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 { margin: 0 0 8px; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .list {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    /* Scale / estimator */
+    .scale {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+
+    .scale fieldset {
+      border: 0;
+      padding: 0;
+      margin: 0;
+    }
+
+    .scale legend {
+      font-weight: 750;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .scale .hint {
+      margin: 6px 0 12px;
+      color: var(--muted);
+    }
+
+    .range-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 14px;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--brand);
+    }
+
+    output {
+      font-variant-numeric: tabular-nums;
+      font-weight: 800;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid var(--border);
+      min-width: 12ch;
+      text-align: center;
+    }
+
+    .scale .labels {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: .92rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .note {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    /* Contact */
+    form {
+      display: grid;
+      gap: 12px;
+    }
+
+    label { font-weight: 650; }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      font: inherit;
+      background: #fff;
+    }
+
+    textarea { min-height: 120px; resize: vertical; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    button {
+      border: 0;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 14px;
+      border-radius: 14px;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    button:hover { background: var(--brand-2); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      padding: 18px 0;
+    }
+
+    .footer-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .small { color: var(--muted); font-size: .95rem; }
+
+    /* Responsive */
+    @media (max-width: 920px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      nav { justify-content: flex-start; }
+      .brand { min-width: 0; }
+    }
+
+    /* Visually hidden helper */
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <div class="wrap">
+      <div class="topbar" role="navigation" aria-label="Primary">
+        <a class="brand" href="#home">
+          <img src="bsl-logo.png" alt="Bloom Street Landscaping logo" />
+          <div class="name">
+            <strong>Bloom Street Landscaping</strong>
+            <span>San Diego • Lawn care • Trimming • Clean-ups</span>
+          </div>
+        </a>
+
+        <nav aria-label="Site">
+          <a href="#services">Services</a>
+          <a href="#estimator">Estimator</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a class="cta" href="tel:+17607928281" aria-label="Call Bloom Street Landscaping at (760) 792-8281">Call (760) 792-8281</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <h1 id="hero-title">Professional Landscaping Services in San Diego</h1>
+            <p>
+              Reliable, detail-focused service for homes and businesses: lawn care, trimming, clean-ups, and ongoing maintenance.
+              Get a quick ballpark estimate with our accessible size scale below.
+            </p>
+
+            <div class="hero-actions">
+              <a class="cta" href="#contact">Request a quote</a>
+              <a class="secondary" href="#services">View services</a>
+            </div>
+
+            <div class="pill" role="note" aria-label="Service area note">
+              <span aria-hidden="true">📍</span>
+              Serving San Diego and nearby neighborhoods
+            </div>
+          </div>
+
+          <aside class="hero-card" aria-label="Company mark">
+            <img src="bsl-mark.png" alt="Bloom Street Landscaping brand mark" />
+            <p class="small" style="margin: 12px 0 0;">
+              Residential &amp; commercial • Flexible scheduling • Free estimates
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-title">
+          <h2 id="services-title">Services</h2>
+          <p>Simple, transparent options with professional results.</p>
+        </div>
+
+        <div class="cards" role="list">
+          <article class="card" role="listitem">
+            <h3>Lawn care</h3>
+            <p>Mow, edge, blow, and tidy—one-time or recurring.</p>
+            <ul class="list">
+              <li>Weekly, bi-weekly, or monthly schedules</li>
+              <li>Clean edging on walkways and borders</li>
+              <li>Final blow-off for a polished finish</li>
+            </ul>
+          </article>
+
+          <article class="card" role="listitem">
+            <h3>Trimming</h3>
+            <p>Shrubs, hedges, and small trees shaped with care.</p>
+            <ul class="list">
+              <li>Hedge shaping and seasonal pruning</li>
+              <li>Weed control and bed touch-ups</li>
+              <li>Debris removal available</li>
+            </ul>
+          </article>
+
+          <article class="card" role="listitem">
+            <h3>Clean-ups</h3>
+            <p>Yard clean-outs, leaf removal, and reset services.</p>
+            <ul class="list">
+              <li>Pre-sale and move-out clean-ups</li>
+              <li>Storm clean-up and haul-away</li>
+              <li>One-time deep refresh</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="estimator" aria-labelledby="estimator-title">
+      <div class="wrap">
+        <div class="section-title">
+          <h2 id="estimator-title">Quick estimate scale</h2>
+          <p>Use the slider to get a ballpark range. We confirm pricing after a quick look at your property.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="scale">
+            <fieldset>
+              <legend>Property size</legend>
+              <p class="hint" id="scale-help">
+                Choose the size that best matches your yard. This helps estimate the typical starting range for standard service.
+              </p>
+
+              <div class="range-row">
+                <label for="sizeRange" class="sr-only">Property size scale</label>
+                <input
+                  id="sizeRange"
+                  name="sizeRange"
+                  type="range"
+                  min="1"
+                  max="5"
+                  step="1"
+                  value="3"
+                  aria-describedby="scale-help size-label size-price"
+                />
+                <output id="size-label" for="sizeRange" aria-live="polite">Medium</output>
+              </div>
+
+              <div class="labels" aria-hidden="true">
+                <span>Small</span>
+                <span>XL</span>
+              </div>
+
+              <p class="note">
+                <strong>Estimated starting range:</strong>
+                <span id="size-price" aria-live="polite">$75–$120</span>
+                <span class="small">(typical lawn care visit)</span>
+              </p>
+              <p class="small">
+                Note: Trimming, clean-ups, haul-away, steep slopes, heavy overgrowth, and special requests can change pricing.
+              </p>
+            </fieldset>
+          </div>
+
+          <div class="card">
+            <h3>Want the most accurate quote?</h3>
+            <p>
+              Send us your address and what you need (lawn care, trimming, clean-up, or ongoing maintenance).
+              We’ll respond with availability and a clear estimate.
+            </p>
+            <ul class="list">
+              <li>Residential &amp; commercial</li>
+              <li>One-time or recurring</li>
+              <li>Fast response by phone</li>
+            </ul>
+            <div style="margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px;">
+              <a class="cta" href="#contact">Request a quote</a>
+              <a class="secondary" href="tel:+17607928281">Call now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="section-title">
+          <h2 id="about-title">About Bloom Street Landscaping</h2>
+          <p>Friendly, dependable work you can see immediately.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>What to expect</h3>
+            <p>
+              We show up on schedule, communicate clearly, and leave your property looking clean and cared for.
+            </p>
+            <ul class="list">
+              <li>Clear scope before we start</li>
+              <li>Careful trimming and tidy edges</li>
+              <li>Clean finish—no mess left behind</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Commercial &amp; residential</h3>
+            <p>
+              From small yards to storefronts and office properties, we tailor the plan to match your needs and budget.
+            </p>
+            <ul class="list">
+              <li>Recurring maintenance plans</li>
+              <li>Seasonal clean-ups</li>
+              <li>Flexible scheduling</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="section-title">
+          <h2 id="contact-title">Contact</h2>
+          <p>Call or send a message—we’ll get back to you quickly.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Call</h3>
+            <p>
+              <a href="tel:+17607928281" aria-label="Call (760) 792-8281">(760) 792-8281</a>
+            </p>
+            <h3 style="margin-top: 16px;">Service area</h3>
+            <p class="small">San Diego and surrounding neighborhoods.</p>
+
+            <h3 style="margin-top: 16px;">Hours</h3>
+            <p class="small">Mon–Sat: 8am–6pm (by appointment)</p>
+          </div>
+
+          <div class="card">
+            <h3>Request a quote</h3>
+            <p class="small">All fields are optional, but more details help us quote faster.</p>
+
+            <form action="#" method="post" aria-describedby="form-note">
+              <div class="form-row">
+                <div>
+                  <label for="fullName">Name</label>
+                  <input id="fullName" name="fullName" autocomplete="name" />
+                </div>
+                <div>
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="(760) 792-8281" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div>
+                  <label for="service">Service needed</label>
+                  <select id="service" name="service">
+                    <option value="">Select one…</option>
+                    <option>Lawn care</option>
+                    <option>Trimming</option>
+                    <option>Clean-up</option>
+                    <option>Ongoing maintenance</option>
+                    <option>Commercial service</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="preferred">Preferred timing</label>
+                  <select id="preferred" name="preferred">
+                    <option value="">Select one…</option>
+                    <option>ASAP</option>
+                    <option>This week</option>
+                    <option>Next week</option>
+                    <option>Flexible</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="address">Address / neighborhood</label>
+                <input id="address" name="address" autocomplete="street-address" placeholder="San Diego" />
+              </div>
+
+              <div>
+                <label for="details">Details</label>
+                <textarea id="details" name="details" placeholder="Example: Front + back yard, light trimming, need haul-away…"></textarea>
+              </div>
+
+              <p id="form-note" class="small">
+                This demo form does not send messages yet. To make it live, connect it to a form service (Formspree, Netlify Forms) or your web host.
+              </p>
+
+              <button type="button" id="demoSend">Send request</button>
+              <p class="small" id="demoStatus" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <img src="bsl-logo.png" alt="" width="40" height="40" style="object-fit:contain" />
+          <div>
+            <div style="font-weight:800;">Bloom Street Landscaping</div>
+            <div class="small">San Diego • <a href="tel:+17607928281">(760) 792-8281</a></div>
+          </div>
+        </div>
+
+        <div class="small">© <span id="year"></span> Bloom Street Landscaping. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      // Footer year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Accessible estimate scale
+      const range = document.getElementById('sizeRange');
+      const label = document.getElementById('size-label');
+      const price = document.getElementById('size-price');
+
+      const steps = {
+        1: { name: 'Small', price: '$55–$85' },
+        2: { name: 'Small–Medium', price: '$65–$105' },
+        3: { name: 'Medium', price: '$75–$120' },
+        4: { name: 'Large', price: '$95–$160' },
+        5: { name: 'Extra Large', price: '$130–$220' }
+      };
+
+      function updateScale() {
+        const v = String(range.value);
+        label.textContent = steps[v].name;
+        price.textContent = steps[v].price;
+      }
+
+      range.addEventListener('input', updateScale);
+      updateScale();
+
+      // Demo send button
+      const btn = document.getElementById('demoSend');
+      const status = document.getElementById('demoStatus');
+      btn.addEventListener('click', () => {
+        status.textContent = 'Thanks! This is a demo—connect the form to send messages for real.';
+      });
+    })();
+  </script>
+</body>
+</html>
